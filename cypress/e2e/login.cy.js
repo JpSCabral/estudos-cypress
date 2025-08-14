@@ -1,22 +1,28 @@
 describe("template spec", () => {
-  it.skip("Login - success", () => {
-    cy.visit(
-      "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"
-    );
-    cy.get("[name='username']").type("Admin");
-    cy.get("[type='password']").type("admin123");
-    cy.get("[type='submit']").click();
-    cy.location("pathname").should("equal", "/web/index.php/dashboard/index");
-    cy.get(".oxd-topbar-header-breadcrumb").contains("Dashboard");
+  const selectorList = {
+    usernameField: "[name='username']",
+    passwordField: "[type='password']",
+    buttonField: "[type='submit']",
+    alertField: ".oxd-alert",
+    addressLink:
+      "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login",
+    addressLoginLink: "/web/index.php/dashboard/index",
+    headerText: ".oxd-topbar-header-breadcrumb",
+  };
+
+  it("Login - success", () => {
+    cy.visit(selectorList.addressLink);
+    cy.get(selectorList.usernameField).type("Admin");
+    cy.get(selectorList.passwordField).type("admin123");
+    cy.get(selectorList.buttonField).click();
+    cy.location("pathname").should("equal", selectorList.addressLoginLink);
+    cy.get(selectorList.headerText).contains("Dashboard");
   });
-  it("Login - failed", () => {
-    cy.visit(
-      "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"
-    );
-    cy.get("[name='username']").type("Admin");
-    cy.get("[type='password']").type("admin");
-    cy.get("[type='submit']").click();
-    cy.get(".oxd-button").click();
-    cy.get(".oxd-alert");
+  it.skip("Login - failed", () => {
+    cy.visit(selectorList.addressLink);
+    cy.get(selectorList.usernameField).type("Admin");
+    cy.get(selectorList.passwordField).type("123");
+    cy.get(selectorList.buttonField).click();
+    cy.get(selectorList.alertField);
   });
 });

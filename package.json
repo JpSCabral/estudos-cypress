@@ -1,0 +1,14 @@
+{
+  "name": "cypressstudy",
+  "version": "1.0.0",
+  "description": "Estudos de cypress",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Joao Pedro Cabral",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^14.5.4"
+  }
+}

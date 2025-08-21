@@ -9,22 +9,22 @@ class SideMenuItens {
   }
 
   accessAdmin() {
-    cy.get(this.selectorList().itensMenu[0]).click(); //
+    cy.get(this.selectorList().itensMenu[0]).click();
   }
   accessPim() {
-    cy.get(this.selectorList().itensMenu[1]).click(); //PIM
+    cy.get(this.selectorList().itensMenu[1]).click();
   }
   accessLeave() {
-    cy.get(this.selectorList().itensMenu[2]).click(); //Leave
+    cy.get(this.selectorList().itensMenu[2]).click();
   }
   accessTime() {
-    cy.get(this.selectorList().itensMenu[3]).click(); //Time
+    cy.get(this.selectorList().itensMenu[3]).click();
   }
   accessRecruitment() {
-    cy.get(this.selectorList().itensMenu[4]).click(); //Recruitment
+    cy.get(this.selectorList().itensMenu[4]).click();
   }
   accessMyInfo() {
-    cy.get(this.selectorList().menuMyInfo).click(); //My info
+    cy.get(this.selectorList().menuMyInfo).click();
   }
   accessPerfomance() {
     cy.get(this.selectorList().itensMenu[6]).click();

@@ -6,7 +6,7 @@ const loginPage = new LoginPage();
 const dashboardPage = new DashboardPage();
 
 describe("template spec", () => {
-  it.skip("Login - success", () => {
+  it("Login - success", () => {
     loginPage.accessLoginPage();
     loginPage.loginWithUser(
       userData.userSucess.username,
@@ -14,7 +14,7 @@ describe("template spec", () => {
     );
     dashboardPage.validateDashPage();
   });
-  it.skip("Login - failed", () => {
+  it("Login - failed", () => {
     loginPage.accessLoginPage();
     loginPage.loginWithUser(
       userData.userFail.username,
